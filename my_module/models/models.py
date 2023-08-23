@@ -1,21 +1,16 @@
 from odoo import models, fields, api
 
 
-def _get_lesson_subjects(self):
-    return [("physics", "Physics"), ("chemistry", "Chemistry"), ("math", "Math")]
+class subject(models.Model):
+    _name = "my_module.subject"
+
+    name = fields.Char(string="Name", required=True)
 
 
 class private_lesson(models.Model):
-    _name = "private_lesson"
-    _description = "Private lesson"
+    _name = "my_module.private_lesson"
 
-    subject = fields.Selection(
-        _get_lesson_subjects,
-        string="Subject",
-        required=True,
-        readonly=True,
-    )
-
+    subject = fields.Many2one("my_module.subject", string="Subject")
     lesson_name = fields.Char(string="Lesson Name", compute="_compute_lesson_name")
 
     student_id = fields.Many2one("res.partner", string="Student", required=True)

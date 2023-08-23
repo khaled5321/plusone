@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record id="res_partner_dummy" model="res.partner">
+            <field name="name">John Doe</field>
+            <field name="email">john.doe2@example.com</field>
+            <field name="phone">+1 212 555 1212</field>
+            <field name="city">New York</field>
+            <field name="state_id">4</field>
+            <field name="country_id">1</field>
+        </record>
+        <record id="res_partner_dummy_2" model="res.partner">
+            <field name="name">Jane Doe2</field>
+            <field name="email">jane.doe@example.com</field>
+            <field name="phone">+1 212 555 1213</field>
+            <field name="city">Los Angeles</field>
+            <field name="state_id">6</field>
+            <field name="country_id">5</field>
+        </record>
+        <record id="res_partner_dummy_3" model="res.partner">
+            <field name="name">Peter Smith</field>
+            <field name="email">peter.smith@example.com</field>
+            <field name="phone">+1 212 555 1214</field>
+            <field name="city">Chicago</field>
+            <field name="state_id">1</field>
+            <field name="country_id">4</field>
+        </record>
+        <record id="res_partner_dummy_4" model="res.partner">
+            <field name="name">Mary Johnson</field>
+            <field name="email">mary.johnson@example.com</field>
+            <field name="phone">+1 212 555 1215</field>
+            <field name="city">San Francisco</field>
+            <field name="state_id">5</field>
+            <field name="country_id">3</field>
+        </record>
+        <record id="res_partner_dummy_5" model="res.partner">
+            <field name="name">David Williams</field>
+            <field name="email">david.williams@example.com</field>
+            <field name="phone">+1 212 555 1216</field>
+            <field name="city">Miami</field>
+            <field name="state_id">3</field>
+            <field name="country_id">2</field>
+        </record>
+        <record id="res_partner_dummy_2" model="res.partner">
+            <field name="name">Jane Doe5</field>
+            <field name="email">jane.doe5@example.com</field>
+            <field name="phone">+1 212 555 1213</field>
+            <field name="city">Los Angeles</field>
+            <field name="state_id">6</field>
+            <field name="country_id">10</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+    <data>  
+        <menuitem id="lesson_menu_root" name="lesson_menu" groups="base.group_user">
+            <menuitem id="subject_menu_first_level" name="First Level">
+                <menuitem id="lesson_menu_create_action" action="lesson_create_action"/>
+            </menuitem>
+        </menuitem>
+    </data>
+</odoo>

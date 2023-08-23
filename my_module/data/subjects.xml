@@ -1,0 +1,11 @@
+<odoo>
+    <record id="math" model="my_module.subject">
+        <field name="name">math</field>
+    </record>
+    <record id="science" model="my_module.subject">
+        <field name="name">science</field>
+    </record>
+    <record id="history" model="my_module.subject">
+        <field name="name">history</field>
+    </record>
+</odoo>
