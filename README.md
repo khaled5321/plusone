@@ -4,9 +4,9 @@
 
 1. Clone repo  
   ```
-git clone https://github.com/khaled5321/plusone.git
-```
-3. Install Odoo from source  
+  git clone https://github.com/khaled5321/plusone.git
+  ```
+2. Install Odoo from source  
     a. Clone Odoo repo  
     ```
    git clone https://github.com/odoo/odoo.git -b 16.0 --depth=1
@@ -27,7 +27,7 @@ git clone https://github.com/khaled5321/plusone.git
     ```
     pip install -e ./odoo
     ```  
-4. Run Odoo with the new module
-   ```
-   odoo --addons-path="./plusone,./odoo/addons" -d database -i my_module
-   ```
+3. Run Odoo with the new module
+```
+odoo --addons-path="./plusone,./odoo/addons" -d database -i my_module
+```
