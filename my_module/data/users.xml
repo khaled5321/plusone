@@ -8,6 +8,14 @@
             <field name="state_id">4</field>
             <field name="country_id">1</field>
         </record>
+        <record id="res_partner_dummy" model="res.partner">
+            <field name="name">John Doe5</field>
+            <field name="email">john.doe5@example.com</field>
+            <field name="phone">+1 212 535 1212</field>
+            <field name="city">New York</field>
+            <field name="state_id">4</field>
+            <field name="country_id">1</field>
+        </record>
         <record id="res_partner_dummy_2" model="res.partner">
             <field name="name">Jane Doe2</field>
             <field name="email">jane.doe@example.com</field>

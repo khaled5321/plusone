@@ -3,31 +3,38 @@ from odoo import models, fields, api
 
 class subject(models.Model):
     _name = "my_module.subject"
+    _description = "Subject"
 
     name = fields.Char(string="Name", required=True)
 
 
 class private_lesson(models.Model):
     _name = "my_module.private_lesson"
+    _description = "Private Lesson"
 
-    subject = fields.Many2one("my_module.subject", string="Subject")
+    subject = fields.Many2one("my_module.subject", string="Subject", required=True)
     lesson_name = fields.Char(string="Lesson Name", compute="_compute_lesson_name")
 
-    student_id = fields.Many2one("res.partner", string="Student", required=True)
-    teacher_id = fields.Many2one("res.partner", string="Teacher", required=True)
+    students = fields.Many2many(
+        "res.partner",
+        "lesson_students",
+        string="Students",
+        required=True,
+        ondelete="cascade",
+    )
+    teachers = fields.Many2many(
+        "res.partner",
+        "lesson_teachers",
+        string="Teachers",
+        required=True,
+        ondelete="cascade",
+        # domain="[('country_id', 'in', students.country_id)]"
+    )
 
-    @api.depends("subject", "create_date")
+    @api.depends("subject")
     def _compute_lesson_name(self):
         for lesson in self:
-            lesson.lesson_name = (
-                f"{lesson.subject}-{lesson.create_date.year}-{lesson.create_date.month}"
-            )
-
-    @api.onchange("student_id")
-    def _onchange_student_id(self):
-        self.teacher_id = False
-        if self.student_id:
-            country_id = self.student_id.country_id
-            self.teacher_id = self.env["res.partner"].search(
-                [("country_id", "=", country_id)]
-            )
+            if lesson.create_date:
+                lesson.lesson_name = f"{lesson.subject.name}-{lesson.create_date.year}-{lesson.create_date.month}"
+            else:
+                lesson.lesson_name = ""

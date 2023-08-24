@@ -1,0 +1,3 @@
+<odoo>
+    <menuitem id="menu_root" name="Private Lessons" sequence="10"/>
+</odoo>

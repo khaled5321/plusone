@@ -3,26 +3,18 @@
     "name": "my_module",
     "summary": """Plusone Task""",
     "author": "Khaled Emad",
-    "category": "service",
+    "category": "Service",
     "version": "16.0.0.1",
-    # any module necessary for this one to work correctly
+    "license": "AGPL-3",
     "depends": ["base"],
     "installable": True,
     "application": True,
-    # always loaded
     "data": [
         "security/ir.model.access.csv",
-        "views/views.xml",
-        "views/templates.xml",
-        "views/lesson_create_action.xml",
-        "views/subject_create_action.xml",
+        "views/menu.xml",
         "views/lesson_menu.xml",
         "views/subject_menu.xml",
         "data/subjects.xml",
         "data/users.xml",
-    ],
-    # only loaded in demonstration mode
-    "demo": [
-        "demo/demo.xml",
     ],
 }

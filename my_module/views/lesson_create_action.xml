@@ -1,7 +1,0 @@
-<odoo>
-<record id="lesson_create_action" model="ir.actions.act_window">
-    <field name="name">Create Lesson</field>
-    <field name="res_model">my_module.private_lesson</field>
-    <field name="view_mode">tree,form</field>
-</record>
-</odoo>

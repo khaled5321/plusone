@@ -1,9 +1,17 @@
 <odoo>
-    <data>  
-        <menuitem id="lesson_menu_root" name="lesson_menu" groups="base.group_user">
-            <menuitem id="subject_menu_first_level" name="First Level">
-                <menuitem id="lesson_menu_create_action" action="lesson_create_action"/>
-            </menuitem>
-        </menuitem>
-    </data>
+    <record id="action_lesson" model="ir.actions.act_window">
+        <field name="name">Lessons</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">my_module.private_lesson</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    
+    <menuitem 
+        id="menu_lessons" 
+        name="Lessons"
+        parent="menu_root"
+        action="action_lesson"
+        sequence="10"
+    />
 </odoo>

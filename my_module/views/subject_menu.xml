@@ -1,9 +1,17 @@
 <odoo>
-    <data>  
-        <menuitem id="subject_menu_root" name="subject_menu" groups="base.group_system">
-            <menuitem id="subject_menu_first_level" name="First Level">
-                <menuitem id="subject_menu_create_action" action="subject_create_action"/>
-            </menuitem>
-        </menuitem>
-    </data>
+    <record id="action_subject" model="ir.actions.act_window">
+        <field name="name">Subjects</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">my_module.subject</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    
+    <menuitem 
+        id="menu_subjects" 
+        name="Subjects"
+        action="action_subject"
+        parent="menu_root" 
+        sequence="10"
+    />
 </odoo>
