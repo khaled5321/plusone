@@ -13,7 +13,7 @@ class private_lesson(models.Model):
     _description = "Private Lesson"
 
     subject = fields.Many2one("my_module.subject", string="Subject", required=True)
-    lesson_name = fields.Char(string="Lesson Name", compute="_compute_lesson_name")
+    name = fields.Char(string="Lesson Name", compute="_compute_name")
 
     students = fields.Many2many(
         "res.partner",
@@ -28,13 +28,23 @@ class private_lesson(models.Model):
         string="Teachers",
         required=True,
         ondelete="cascade",
-        # domain="[('country_id', 'in', students.country_id)]"
     )
 
     @api.depends("subject")
-    def _compute_lesson_name(self):
+    def _compute_name(self):
         for lesson in self:
             if lesson.create_date:
-                lesson.lesson_name = f"{lesson.subject.name}-{lesson.create_date.year}-{lesson.create_date.month}"
+                lesson.name = f"{lesson.subject.name}-{lesson.create_date.year}-{lesson.create_date.month}"
             else:
-                lesson.lesson_name = ""
+                lesson.name = ""
+
+    @api.onchange("students")
+    def _onchange_students(self):
+        return {
+            "domain": {
+                "teachers": [
+                    ("country_id", "in", self.students.mapped("country_id").ids),
+                    ("id", "not in", self.students.ids),
+                ]
+            }
+        }

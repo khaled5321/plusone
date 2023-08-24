@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-my_module.access_my_module_private_lesson,access_my_module_private_lesson,my_module.model_my_module_private_lesson,base.group_user,1,1,1,1
-my_module.access_my_module_subject,access_my_module_subject,my_module.model_my_module_subject,base.group_user,1,0,0,0
-my_module.access_my_module_subject,access_my_module_subject,my_module.model_my_module_subject,base.group_system,1,1,1,1
+my_module.access_my_module_private_lesson_normal,access_my_module_private_lesson,my_module.model_my_module_private_lesson,group_normal_user,1,1,1,1
+my_module.access_my_module_private_lesson_admin,access_my_module_private_lesson,my_module.model_my_module_private_lesson,group_admin_user,1,1,1,1
+my_module.access_my_module_subject_admin,access_my_module_subject,my_module.model_my_module_subject,group_admin_user,1,1,1,1
+my_module.access_my_module_subject_normal,access_my_module_subject,my_module.model_my_module_subject,group_normal_user,1,0,0,0

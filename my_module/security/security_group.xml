@@ -1,0 +1,11 @@
+<odoo>
+<record id="group_normal_user" model="res.groups">
+    <field name="name">Normal User</field>
+    <field name="category_id" ref="base.module_category_hidden"/>
+</record>
+
+<record id="group_admin_user" model="res.groups">
+    <field name="name">Admin User</field>
+    <field name="category_id" ref="base.module_category_hidden"/>
+</record>
+</odoo>

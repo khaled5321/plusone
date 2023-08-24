@@ -10,6 +10,7 @@
     "installable": True,
     "application": True,
     "data": [
+        "security/security_group.xml",
         "security/ir.model.access.csv",
         "views/menu.xml",
         "views/lesson_menu.xml",
