@@ -27,7 +27,11 @@
     ```
     pip install -e ./odoo
     ```  
-3. Run Odoo with the new module
+3. Start PostgreSQL service  
+```
+sudo service postgresql start
+```
+4. Run Odoo with the new module
 ```
 odoo --addons-path="./plusone,./odoo/addons" -d database -i my_module
 ```
